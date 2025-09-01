@@ -1,0 +1,273 @@
+:root {
+  /* Paleta principal */
+  --primary: rgb(0, 0, 255);
+  --primary-dark: #3a56d4;
+  --secondary: #7209b7;
+  --accent: #f72585;
+
+  /* Colores de estado */
+  --success: #4cc9f0;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #0ea5e9;
+
+  /* Neutros */
+  --white-color: #ffffff;
+  --light: #f8f9fa;
+  --dark: #212529;
+  --gray: #6c757d;
+  --light-gray: #e9ecef;
+
+  /* Escala de grises */
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-500: #6b7280;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+
+  /* Tipografía */
+  --font-family-sans: "Inter", "Segoe UI", sans-serif;
+  --font-family-mono: "Fira Code", monospace;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semi-bold: 600;
+  --font-weight-bold: 700;
+
+  /* Layout y diseño */
+  --border-radius: 12px;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --max-width: 1200px;
+
+  /* Sombras */
+  --shadow-sm: 0 4px 6px rgba(0, 0, 0, 0.05);
+  --shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+
+  /* Transiciones */
+  --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --transition-fast: all 0.15s ease-in-out;
+  --transition-slow: all 0.5s ease;
+
+  /* Breakpoints */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+
+  /* Z-index */
+  --z-index-header: 100;
+  --z-index-modal: 1000;
+  --z-index-tooltip: 1100;
+}
+
+body {
+  margin: 0;
+}
+.header {
+  background: #2a7b9b;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  width: 100%;
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: rgb(255, 255, 255);
+}
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+.booksgrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); /* tarjetas en columnas */
+  gap: 1rem; /* separación entre cards */
+  padding: 1rem;
+}
+
+/* Se utiliza cuando un boton contiene algo */
+.booksgrid:has(.empty-state) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 50vh;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
+  border: 1px solid var(--dark);
+  border-radius: var(--border-radius);
+  width: 19rem;
+  justify-content: center;
+}
+
+/* Botón añadir libro */
+.btn.primary {
+  background-color: var(--white-color);
+  color: var(--primary);
+}
+
+.btn {
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(
+    --transition
+  ); /* Lo usamos para mejorar la experiencia visual. */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+.btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Dialog */
+dialog {
+  width: 20rem;
+  height: 15rem;
+}
+.modal {
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  margin: 2rem 1rem 2rem 3rem !important;
+  /* margin: top right left bottom  */
+  border-radius: 1rem;
+}
+
+.modal-content {
+  background-color: var(--white-color);
+  margin: 0;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(
+    90deg,
+    rgba(42, 123, 155, 1) 0%,
+    rgba(87, 199, 133, 1) 50%,
+    rgba(237, 221, 83, 1) 100%
+  );
+  color: var(--white-color);
+}
+
+label {
+  margin-left: 0.2rem;
+}
+
+.form-group {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 0.3rem;
+}
+
+.form-action {
+  margin-left: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+#btn-add {
+  background-color: #57c785;
+  color: rgb(255, 255, 255);
+}
+
+#btn-cancelar {
+  background-color: #ffffff;
+  border: 1px solid #57c785 !important;
+  color: #57c785;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(
+    --transition
+  ); /* Lo usamos para mejorar la experiencia visual. */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+#btn-cancelar:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.book-card {
+  
+  background-color: #0ea5e9;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: #57c785;
+  color: white;
+}
+
+div >.book-card{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.btn-quit{
+  background-color: #ffffff;
+  border: 1px solid #57c785 !important;
+  color: #57c785;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(
+    --transition
+  ); /* Lo usamos para mejorar la experiencia visual. */
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  box-shadow: var(--shadow-sm);
+}
+
+input[type="checkbox"] {
+  margin-left: 0.5rem; 
+}
