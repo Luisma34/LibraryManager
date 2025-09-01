@@ -12,3 +12,10 @@ Todavía sin implementar el localStorage.
 - **HTML5**
 - **CSS3** (BEM,variables,Grid/Flexbox)
 - **JavaScript**
+## Estructura del proyecto
+├── index.html # Estructura principal
+├── style.css # Estilos
+├── script.js # Lógica de la app
+└── README.md # Documentación
+
+
