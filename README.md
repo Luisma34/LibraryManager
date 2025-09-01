@@ -13,9 +13,10 @@ Todavía sin implementar el localStorage.
 - **CSS3** (BEM,variables,Grid/Flexbox)
 - **JavaScript**
 ## Estructura del proyecto
-├── index.html # Estructura principal
-├── style.css # Estilos
-├── script.js # Lógica de la app
-└── README.md # Documentación
+- index.html # Estructura principal
+- style.css # Estilos
+- script.js # Lógica de la app
+- README.md # Documentación
 
-
+## Autor
+Luis Manuel Cordón Álvarez, estudiante de DAW en el IES El Rincón (Gran Canaria).
